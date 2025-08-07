@@ -1,12 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.fireboy637.translatabledebugoptions.mixin",
+  "package": "com.fireboy637.translatabledebugoptions.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "DebugOptionScreenEntryMixin",
-    "DebugOptionScreenOptionsListWidgetMixin"
+    "DebugOptionScreenMixin$DebugOptionScreenEntryMixin",
+    "DebugOptionScreenMixin$DebugOptionScreenOptionsListWidgetMixin"
   ],
   "injectors": {
     "defaultRequire": 1

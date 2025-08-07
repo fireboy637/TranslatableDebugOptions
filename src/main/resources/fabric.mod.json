@@ -10,11 +10,8 @@
   },
   "license": "MIT",
   "environment": "client",
-  "mixins": [
-    "translatabledebugoptions.mixins.json"
-  ],
+  "mixins": ["translatabledebugoptions.mixins.json"],
   "depends": {
-    "fabricloader": "*",
     "minecraft": ">=1.21.9-alpha.25.31.a"
   }
 }
