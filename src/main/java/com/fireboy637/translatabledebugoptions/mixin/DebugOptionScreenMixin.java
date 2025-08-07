@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 public class DebugOptionScreenMixin {
     @WrapOperation(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Identifier;getPath()Ljava/lang/String;"))
     private String pathToKey(Identifier instance, Operation<String> original) {
-        return Text.translatable("text.debug." + instance.getPath()).getString();
+        return Text.translatable("debug." + instance.getNamespace() + "." + instance.getPath()).getString();
     }
 }
