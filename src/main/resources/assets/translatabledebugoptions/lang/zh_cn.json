@@ -23,12 +23,12 @@
   "debug.minecraft.post_effect": "后期效果",
   "debug.minecraft.entity_hitboxes": "实体碰撞箱",
   "debug.minecraft.chunk_borders": "区块边界",
-  "debug.minecraft.3d_crosshair": "3D 准星",
+  "debug.minecraft.3d_crosshair": "3D准星",
   "debug.minecraft.chunk_section_paths": "区块分段路径",
-  "debug.minecraft.gpu_utilization": "GPU 利用率",
+  "debug.minecraft.gpu_utilization": "GPU利用率",
   "debug.minecraft.simple_performance_impactors": "简易性能设置信息",
   "debug.minecraft.chunk_section_octree": "区块分段八叉树",
   "debug.minecraft.chunk_section_visibility": "区块分段可见性",
 
-  "debug.sodium.debug": "Sodium 调试信息"
+  "debug.sodium.debug": "Sodium调试信息"
 }
