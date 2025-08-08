@@ -6,7 +6,7 @@
   "debug.minecraft.system_specs": "System specifications",
   "debug.minecraft.looking_at_block": "Targeted block",
   "debug.minecraft.looking_at_fluid": "Targeted fluid",
-  "debug.minecraft.looking_at_entity": "Targeted Entity",
+  "debug.minecraft.looking_at_entity": "Targeted entity",
   "debug.minecraft.chunk_render_stats": "Chunk render status",
   "debug.minecraft.chunk_generation_stats": "Chunk generation status",
   "debug.minecraft.entity_render_stats": "Entity render status",
