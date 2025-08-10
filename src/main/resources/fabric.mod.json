@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "translatabledebugoptions",
-  "version": "1.3.2",
+  "version": "${version}",
   "name": "TranslatableDebugOptions",
   "description": "Make the Debug Option screen translatable.",
   "authors": ["fireboy637"],

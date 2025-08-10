@@ -29,7 +29,7 @@ public abstract class DebugOptionScreenMixin {
             Identifier identifier = entry.getKey();
             String searchStringLower = searchCharSequence.toString().toLowerCase();
             return original.call(string.toLowerCase(), searchStringLower) ||
-                    Text.translatable("debug." + identifier.getNamespace() + "." + identifier.getPath()).getString().toLowerCase().contains(searchStringLower);
+                    original.call(Text.translatable("debug." + identifier.getNamespace() + "." + identifier.getPath()).getString().toLowerCase(), searchStringLower);
         }
     }
 }
