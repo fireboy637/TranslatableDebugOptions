@@ -3,6 +3,7 @@
   "id": "translatabledebugoptions",
   "version": "${version}",
   "name": "TranslatableDebugOptions",
+  "icon": "assets/translatabledebugoptions/icon.png",
   "description": "Make the Debug Option screen translatable.",
   "authors": ["fireboy637"],
   "contact": {
