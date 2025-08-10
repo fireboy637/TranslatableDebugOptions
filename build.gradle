@@ -1,5 +1,6 @@
 plugins {
     id 'fabric-loom' version '1.11-SNAPSHOT'
+    id 'com.modrinth.minotaur' version "2.+"
     id 'maven-publish'
 }
 
@@ -10,6 +11,15 @@ base {
     archivesName = project.archives_base_name
 }
 
+modrinth { // For me: Remember to set $MODRINTH_TOKEN !!!
+    projectId = 'translatabledebugoptions'
+    uploadFile = remapJar
+    gameVersions = ['25w31a', '25w32a']
+    loaders = ['fabric']
+    dependencies {
+        required.project "fabric-api"
+    }
+}
 
 repositories {
     // Add repositories to retrieve artifacts from in here.
