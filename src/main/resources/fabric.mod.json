@@ -12,6 +12,7 @@
   "environment": "client",
   "mixins": ["translatabledebugoptions.mixins.json"],
   "depends": {
-    "minecraft": ">=1.21.9-alpha.25.31.a"
+    "minecraft": ">=1.21.9-alpha.25.31.a",
+    "fabric-api": "*"
   }
 }
