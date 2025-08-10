@@ -13,6 +13,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    # trash by AI
+    - name: Generate cache key
+      id: cache-key
+      run: |
+        timestamp=$(date +%Y%m%d%H%M%S)
+        echo "cache_key=buildcache-$timestamp" >> $GITHUB_OUTPUT
+      
+    - name: Restore cache
+      uses: actions/cache@v4
+      id: cache
+      with:
+        path: |
+          ~/.gradle
+          ./.gradle
+        key: ${{ steps.cache-key.outputs.cache_key }}
+        restore-keys: |
+          buildcache-
+  
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
