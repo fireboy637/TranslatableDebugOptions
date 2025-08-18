@@ -25,9 +25,7 @@ jobs:
       uses: actions/cache@v4
       id: cache
       with:
-        path: |
-          ~/.gradle
-          ./.gradle
+        path: ./.gradle
         key: ${{ steps.cache-key.outputs.cache_key }}
         restore-keys: |
           buildcache-
