@@ -14,20 +14,10 @@ base {
 modrinth { // For me: Remember to set $MODRINTH_TOKEN !!!
     projectId = 'translatabledebugoptions'
     uploadFile = remapJar
-    gameVersions = ['25w31a', '25w32a']
+    gameVersions = [project.minecraft_version]
     loaders = ['fabric']
     dependencies {
         required.project "fabric-api"
-    }
-}
-
-repositories {
-    maven {
-        name = 'Modrinth'
-        url = 'https://api.modrinth.com/maven'
-        content {
-            includeGroup('maven.modrinth')
-        }
     }
 }
 
@@ -37,8 +27,6 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modRuntimeOnly "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modRuntimeOnly "maven.modrinth:modmenu:${project.modmenu_version}"
-    modRuntimeOnly "maven.modrinth:placeholder-api:${project.'placeholder-api_version'}"
 }
 
 processResources {

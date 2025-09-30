@@ -30,5 +30,9 @@
   "debug.minecraft.chunk_section_octree": "区块分段八叉树",
   "debug.minecraft.chunk_section_visibility": "区块分段可见性",
 
-  "debug.sodium.debug": "Sodium调试信息"
+  "debug.sodium.debug": "Sodium调试信息",
+  "debug.sodium.sodium": "Sodium调试信息",
+  "debug.iris.iris": "Iris信息",
+  "debug.iris.debug": "Iris调试信息",
+  "debug.fabric.active_renderer": "Fabric激活渲染器"
 }
