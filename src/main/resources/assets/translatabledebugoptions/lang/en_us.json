@@ -30,5 +30,9 @@
   "debug.minecraft.chunk_section_octree": "Chunk section octree",
   "debug.minecraft.chunk_section_visibility": "Chunk section visibility",
 
-  "debug.sodium.debug": "Sodium debug info"
+  "debug.sodium.debug": "Sodium debug info",
+  "debug.sodium.sodium": "Sodium debug info",
+  "debug.iris.iris": "Iris info",
+  "debug.iris.debug": "Iris debug info",
+  "debug.fabric.active_renderer": "Fabric active renderer"
 }

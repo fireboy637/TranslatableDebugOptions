@@ -11,11 +11,12 @@ import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.Map;
 
-public abstract class DebugOptionScreenMixin {
+public interface DebugOptionScreenMixin {
     // Make getPath() return translated string. That's all.
-    // Though no code here uses Fabric API, but we still need to install it, or we can only see the translation keys.
+    // Though no code here uses Fabric API, we still need to install it, or we can only see the translation keys.
     @Mixin(targets = "net/minecraft/client/gui/screen/DebugOptionsScreen$Entry")
-    public static abstract class DebugOptionScreenEntryMixin {
+    abstract class EntryMixin {
+        // Need to use @WarpOperation instead of @Redirect, or it will be broken by Fabric API.
         @WrapOperation(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Identifier;getPath()Ljava/lang/String;"))
         private String entryLabelHandler(Identifier identifier, Operation<String> original) {
             return Text.translatable("debug." + identifier.getNamespace() + "." + identifier.getPath()).getString();
@@ -23,13 +24,13 @@ public abstract class DebugOptionScreenMixin {
     }
 
     @Mixin(targets = "net/minecraft/client/gui/screen/DebugOptionsScreen$OptionsListWidget")
-    public static abstract class DebugOptionScreenOptionsListWidgetMixin {
+    abstract class OptionsListWidgetMixin {
         @WrapOperation(method = "fillEntries", at = @At(value = "INVOKE", target = "Ljava/lang/String;contains(Ljava/lang/CharSequence;)Z"))
-        private boolean searchHandler(String string, CharSequence searchCharSequence, Operation<Boolean> original, @Local Map.Entry<Identifier, DebugHudEntry> entry) {
+        private boolean searchHandler(String originalString, CharSequence searchCharSequence, Operation<Boolean> original, @Local Map.Entry<Identifier, DebugHudEntry> entry) {
             Identifier identifier = entry.getKey();
             String searchStringLower = searchCharSequence.toString().toLowerCase();
-            return original.call(string.toLowerCase(), searchStringLower) ||
-                    original.call(Text.translatable("debug." + identifier.getNamespace() + "." + identifier.getPath()).getString().toLowerCase(), searchStringLower);
+            String translatedStringLower = Text.translatable("debug." + identifier.getNamespace() + "." + identifier.getPath()).getString().toLowerCase();
+            return original.call(originalString.toLowerCase(), searchStringLower) || original.call(translatedStringLower, searchStringLower);
         }
     }
 }
