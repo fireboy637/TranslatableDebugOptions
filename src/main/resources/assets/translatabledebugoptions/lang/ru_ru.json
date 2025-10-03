@@ -30,5 +30,9 @@
   "debug.minecraft.chunk_section_octree": "Октодерево секций чанков",
   "debug.minecraft.chunk_section_visibility": "Видимость секций чанков",
 
-  "debug.sodium.debug": "Отладочная информация Sodium"
+  "debug.sodium.debug": "Отладочная информация Sodium",
+  "debug.sodium.sodium": "Отладочная информация Sodium",
+  "debug.iris.iris": "Информация об Iris",
+  "debug.iris.debug": "Отладочная информация Iris",
+  "debug.fabric.active_renderer": "Активный рендерер Fabric"
 }
