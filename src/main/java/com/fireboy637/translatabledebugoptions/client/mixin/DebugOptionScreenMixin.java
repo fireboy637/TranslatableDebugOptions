@@ -8,6 +8,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import static com.fireboy637.translatabledebugoptions.client.TranslatableDebugOptions.LOGGER;
+import static com.fireboy637.translatabledebugoptions.client.TranslatableDebugOptions.missingTranslations;
 
 import java.util.Map;
 
@@ -19,7 +21,15 @@ public interface DebugOptionScreenMixin {
         // Need to use @WarpOperation instead of @Redirect, or it will be broken by Fabric API.
         @WrapOperation(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Identifier;getPath()Ljava/lang/String;"))
         private String entryLabelHandler(Identifier identifier, Operation<String> original) {
-            return Text.translatable("debug." + identifier.getNamespace() + "." + identifier.getPath()).getString();
+            String key = "debug." + identifier.getNamespace() + "." + identifier.getPath();
+            Text translatedText = Text.translatable(key);
+            String translatedString = translatedText.getString();
+            if(translatedText.getString().contains(key) && !missingTranslations.contains(key)) {
+                LOGGER.warn("Missing translation for key: {}", key);
+                // Prevent logging the same missing translation multiple times
+                missingTranslations.add(key);
+            }
+            return translatedString;
         }
     }
 

@@ -34,5 +34,9 @@
   "debug.sodium.sodium": "Sodium调试信息",
   "debug.iris.iris": "Iris信息",
   "debug.iris.debug": "Iris调试信息",
-  "debug.fabric.active_renderer": "Fabric激活渲染器"
+  "debug.fabric.active_renderer": "Fabric激活渲染器",
+  "debug.lambdynlights.dynamic_light_at_feet": "LDL脚部动态光照",
+  "debug.lambdynlights.dynamic_light_sources": "LDL动态光源计数",
+  "debug.lambdynlights.spatial_lookup": "LDL空间查找",
+  "debug.immediatelyfast.immediatelyfast": "ImmediatelyFast调试信息"
 }
