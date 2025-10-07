@@ -34,5 +34,9 @@
   "debug.sodium.sodium": "Sodium debug info",
   "debug.iris.iris": "Iris info",
   "debug.iris.debug": "Iris debug info",
-  "debug.fabric.active_renderer": "Fabric active renderer"
+  "debug.fabric.active_renderer": "Fabric active renderer",
+  "debug.lambdynlights.dynamic_light_at_feet": "LDL dynamic light at feet",
+  "debug.lambdynlights.dynamic_light_sources": "LDL dynamic light sources",
+  "debug.lambdynlights.spatial_lookup": "LDL spatial lookup",
+  "debug.immediatelyfast.immediatelyfast": "ImmediatelyFast debug info"
 }
