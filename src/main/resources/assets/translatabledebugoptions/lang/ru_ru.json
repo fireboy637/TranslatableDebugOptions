@@ -30,9 +30,13 @@
   "debug.minecraft.chunk_section_octree": "Октодерево секций чанков",
   "debug.minecraft.chunk_section_visibility": "Видимость секций чанков",
 
-  "debug.sodium.debug": "Отладочная информация Sodium",
-  "debug.sodium.sodium": "Отладочная информация Sodium",
+  "debug.sodium.debug": "Отладка Sodium",
+  "debug.sodium.sodium": "Отладка Sodium",
   "debug.iris.iris": "Информация об Iris",
-  "debug.iris.debug": "Отладочная информация Iris",
-  "debug.fabric.active_renderer": "Активный рендерер Fabric"
+  "debug.iris.debug": "Отладка Iris",
+  "debug.fabric.active_renderer": "Активный рендерер Fabric",
+  "debug.lambdynlights.dynamic_light_at_feet": "LDL динам. освещение у ног",
+  "debug.lambdynlights.dynamic_light_sources": "LDL источники динам. освещения",
+  "debug.lambdynlights.spatial_lookup": "LDL пространственный поиск",
+  "debug.immediatelyfast.immediatelyfast": "Отладка ImmediatelyFast"
 }
