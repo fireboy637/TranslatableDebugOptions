@@ -5,8 +5,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "DebugOptionScreenMixin$OptionEntryMixin",
-    "DebugOptionScreenMixin$OptionsListMixin"
+    "DebugOptionsScreenMixin$OptionEntryMixin",
+    "DebugOptionsScreenMixin$OptionsListMixin"
   ],
   "injectors": {
     "defaultRequire": 1

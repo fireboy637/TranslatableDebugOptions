@@ -13,15 +13,15 @@ import java.util.Map;
 
 import static com.fireboy637.translatabledebugoptions.client.TranslatableDebugOptions.*;
 
-public class DebugOptionScreenMixin {
+/**
+ * {@link  net.minecraft.client.gui.screens.debug.DebugOptionsScreen}
+ */
+public class DebugOptionsScreenMixin {
     // Make getPath() return translated string. That's all.
     // Fabric API is required, as it loads the translations.
-
-    @Mixin(targets = "net/minecraft/client/gui/screens/debug/DebugOptionsScreen$OptionEntry")
+    @Mixin(targets = "net/minecraft/client/gui/screens/debug/DebugOptionsScreen$OptionEntry", priority = 999999)
     public static class OptionEntryMixin {
-
-        // Need to use @WarpOperation instead of @Redirect and private method here, or it will be broken by Fabric API
-        // ... for some reason I don't know.
+        // Need to use @WarpOperation instead of @Redirect here, or it will be broken by Fabric API
         @WrapOperation(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/resources/ResourceLocation;getPath()Ljava/lang/String;"))
         private String entryNameHandler(ResourceLocation instance, Operation<String> original) {
             String key = getKey(instance);
@@ -38,7 +38,7 @@ public class DebugOptionScreenMixin {
         }
     }
 
-    @Mixin(targets = "net/minecraft/client/gui/screens/debug/DebugOptionsScreen$OptionList")
+    @Mixin(targets = "net/minecraft/client/gui/screens/debug/DebugOptionsScreen$OptionList", priority = 999999)
     public static class OptionsListMixin {
         @WrapOperation(method = "updateSearch", at = @At(value = "INVOKE", target = "Ljava/lang/String;contains(Ljava/lang/CharSequence;)Z"))
         private boolean searchHandler(String originalStr, CharSequence searchCharSeq, Operation<Boolean> original, @Local Map.Entry<ResourceLocation, DebugScreenEntry> entry) {
