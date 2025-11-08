@@ -40,6 +40,7 @@ public class DebugOptionsScreenMixin {
 
     @Mixin(targets = "net/minecraft/client/gui/screens/debug/DebugOptionsScreen$OptionList", priority = 999999)
     public static class OptionsListMixin {
+        // Allow searching with both original and translated strings, and it's case-insensitive!
         @WrapOperation(method = "updateSearch", at = @At(value = "INVOKE", target = "Ljava/lang/String;contains(Ljava/lang/CharSequence;)Z"))
         private boolean searchHandler(String originalStr, CharSequence searchCharSeq, Operation<Boolean> original, @Local Map.Entry<ResourceLocation, DebugScreenEntry> entry) {
             String searchStrLower = ((String) searchCharSeq).toLowerCase();
