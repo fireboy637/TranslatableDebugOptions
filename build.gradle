@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.11-SNAPSHOT'
+    id 'fabric-loom' version '1.12-SNAPSHOT'
     id 'com.modrinth.minotaur' version "2.+"
     id 'maven-publish'
 }
@@ -14,7 +14,7 @@ base {
 modrinth { // For me: Remember to set $MODRINTH_TOKEN !!!
     projectId = 'translatabledebugoptions'
     uploadFile = remapJar
-    gameVersions = [project.minecraft_version]
+    gameVersions = project.supported_versions.split(",").toList()
     loaders = ['fabric']
     dependencies {
         required.project "fabric-api"
@@ -24,7 +24,7 @@ modrinth { // For me: Remember to set $MODRINTH_TOKEN !!!
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modRuntimeOnly "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
